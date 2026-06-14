@@ -53,7 +53,9 @@ def predict():
 
     prediction = model.predict(test_df)
 
-    return str(round(prediction[0], 2))
+    price = max(0, prediction[0])
+
+    return str(round(price, 2))
 
 
 if __name__=='__main__':
